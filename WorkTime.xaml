@@ -1,0 +1,35 @@
+﻿<Window x:Class="Hospital.WorkTime"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Hospital"
+        mc:Ignorable="d"
+        Title="WorkTime" Height="450" Width="930">
+
+    <Grid  >
+
+
+        <ListView x:Name="Doctor" Grid.ColumnSpan="1"  HorizontalAlignment="Left" Height="261" Margin="24,106,0,0" VerticalAlignment="Top" Width="875">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="ФИО" Width="215" DisplayMemberBinding="{Binding Path=Name}"/>
+                    <GridViewColumn Header="Специальность" Width="100" DisplayMemberBinding="{Binding Path=Specialist}" />
+                    <GridViewColumn Header="Кабинет" Width="80" DisplayMemberBinding="{Binding Path=Cabinet}"/>
+                    <GridViewColumn Header="Понедельник" Width="100" DisplayMemberBinding="{Binding Path=Pn}"/>
+                    <GridViewColumn Header="Вторник" Width="90" DisplayMemberBinding="{Binding Path=Vt}"/>
+                    <GridViewColumn Header="Среда" Width="90" DisplayMemberBinding="{Binding Path=Sr}"/>
+                    <GridViewColumn Header="Четверг" Width="90" DisplayMemberBinding="{Binding Path=Ch}"/>
+                    <GridViewColumn Header="Пятница" Width="100" DisplayMemberBinding="{Binding Path=Pt}"/>
+
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Label Content="График приема врачей в поликлинике №141" HorizontalAlignment="Left" Margin="24,20,0,0" VerticalAlignment="Top" FontSize="24" FontFamily="MS Mincho" FontWeight="Bold"/>
+        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="23" Margin="24,73,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="258" TextChanged="txtFilter_TextChanged"/>
+        <Button Content="Поиск по ФИО" HorizontalAlignment="Left" Margin="287,74,0,0" VerticalAlignment="Top" Width="98" Click="Button_Click"  />
+        <ComboBox Name="Spec" HorizontalAlignment="Left" Margin="417,73,0,0" VerticalAlignment="Top" Width="180" SelectionChanged="combo_SelectionChanged" />
+        <Button Content="Найти по специальности" HorizontalAlignment="Left" Margin="607,73,0,0" VerticalAlignment="Top" Width="154" Click="Button_Click_1"/>
+        <Button Content="Назад" HorizontalAlignment="Left" Margin="24,383,0,0" VerticalAlignment="Top" Width="92" Click="Button_Click_2"/>
+    </Grid>
+</Window>
